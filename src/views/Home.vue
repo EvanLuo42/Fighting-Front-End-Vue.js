@@ -20,11 +20,21 @@
       <van-grid-item icon="photo-o" text="文字" to="/"/>
     </van-grid>
 
-    <h3>公告</h3>
+    <div style="height: 20px;background-color: #F9F9F9"></div>
 
-    <div class="notice" v-for="item in status" :key="item">
-      <van-cell :title="item.title" :value="item.date" :label="item.content" size="large" />
-    </div>
+    <van-cell-group>
+      <van-cell>
+        <h3>动态</h3>
+        <div class="notice" v-for="item in status" :key="item.title">
+          <van-divider/>
+          <van-cell :title="item.title" :value="item.date" :label="item.content" size="large" />
+        </div>
+      </van-cell>
+    </van-cell-group>
+
+    <van-divider>我是有底线的哦</van-divider>
+
+    <div style="height: 50px;background-color: #F9F9F9"></div>
 
     <Tabbar/>
   </div>
@@ -45,6 +55,9 @@ export default {
       status: [
         { title: 'v0.0.1 版本', content: '测试版本发布', date: '2020.2.17'},
         { title: 'v0.0.2 版本', content: '测试版本发布', date: '2020.2.17'},
+        { title: 'v0.0.3 版本', content: '测试版本发布', date: '2020.2.17'},
+        { title: 'v0.0.4 版本', content: '测试版本发布', date: '2020.2.17'},
+        { title: 'v0.0.5 版本', content: '测试版本发布', date: '2020.2.17'},
       ]
     }
   },
