@@ -25,6 +25,7 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.6",
     "vue-cli-plugin-axios": "0.0.4",
+    "vue-cli-plugin-element-ui": "~1.1.4",
     "vue-cli-plugin-vant": "~1.0.1",
     "vue-template-compiler": "^2.6.11"
   },
