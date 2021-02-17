@@ -1,6 +1,10 @@
 <template>
   <div class="time">
-    <h1>时间</h1>
+    <van-nav-bar title="时间"></van-nav-bar>
+    <div style="height: 20px;background-color: #F9F9F9"></div>
+    <van-cell title="普通计时" is-link to="/normalcount" />
+    <div style="height: 20px;background-color: #F9F9F9"></div>
+    <van-cell title="番茄计时" is-link to="/tomatocount" />
     <Tabbar/>
   </div>
 </template>

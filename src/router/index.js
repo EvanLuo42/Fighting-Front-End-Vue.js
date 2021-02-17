@@ -4,6 +4,8 @@ import Home from '@/views/Home.vue'
 import StudyCircle from "@/views/StudyCircle";
 import Time from "@/views/Time";
 import My from "@/views/My";
+import NormalCount from "@/views/NormalCount";
+import TomatoCount from "@/views/TomatoCount";
 
 Vue.use(VueRouter)
 
@@ -28,6 +30,16 @@ const routes = [
     name: 'My',
     component: My
   },
+  {
+    path: '/normalcount',
+    name: 'NormalCount',
+    component: NormalCount
+  },
+  {
+    path: '/tomatocount',
+    name: 'TomatoCount',
+    component: TomatoCount
+  }
 ]
 
 const router = new VueRouter({

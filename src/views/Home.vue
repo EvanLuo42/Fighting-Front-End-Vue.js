@@ -62,11 +62,11 @@ export default {
     }
   },
   mounted() {
-    axios.get('/api')
+    axios.get('/api') //TODO 上线时跨域请求
         .then(response => {
           response = JSON.parse(response.data);
-          for (var a in response.data.status) {
-            this.status.push(a)
+          for (let data in response.data.status) {
+            this.status.push(data)
           }
         })
         .catch(error => {
