@@ -2,7 +2,7 @@
   <div class="home">
     <van-nav-bar title="首页"></van-nav-bar>
 
-    <van-cell>
+    <van-cell style="background-color: #F9F9F9">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
@@ -11,33 +11,29 @@
       </van-swipe>
     </van-cell>
 
-    <van-cell>
-      <van-grid>
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-      </van-grid>
-    </van-cell>
+    <div style="height: 20px;background-color: #F9F9F9"></div>
 
-    <van-tabbar v-model="active">
-      <van-tabbar-item name="home" icon="home-o"><router-link to="/">Fighting</router-link></van-tabbar-item>
-      <van-tabbar-item name="count" icon="underway-o"><router-link to="/">时间</router-link></van-tabbar-item>
-      <van-tabbar-item name="study-circle" icon="comment-o"><router-link to="/">学习圈</router-link></van-tabbar-item>
-      <van-tabbar-item name="my" icon="user-o"><router-link to="/">我的</router-link></van-tabbar-item>
-    </van-tabbar>
+    <van-grid>
+      <van-grid-item icon="photo-o" text="文字" to="/"/>
+      <van-grid-item icon="photo-o" text="文字" to="/"/>
+      <van-grid-item icon="photo-o" text="文字" to="/"/>
+      <van-grid-item icon="photo-o" text="文字" to="/"/>
+    </van-grid>
+
+    <Tabbar/>
   </div>
 </template>
 
 <script>
+import Tabbar from "@/components/Tabbar";
 
 export default {
   name: 'Home',
   components: {
+    Tabbar
   },
   data() {
     return {
-      active: 'home',
     }
   },
 }
