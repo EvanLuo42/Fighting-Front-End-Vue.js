@@ -6,6 +6,7 @@ import Time from "@/views/Time";
 import My from "@/views/My";
 import NormalCount from "@/views/NormalCount";
 import TomatoCount from "@/views/TomatoCount";
+import Login from "@/views/Login";
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/tomatocount',
     name: 'TomatoCount',
     component: TomatoCount
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ]
 
