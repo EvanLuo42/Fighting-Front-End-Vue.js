@@ -9,11 +9,11 @@
         <!--用户昵称-->
         <span class="user-name" style="margin-left: 39%">
           {{user_name}}
-          <img v-if="sex==1" src="https://s3.ax1x.com/2021/02/18/yWFC1U.jpg" style="width: 14px;margin-right: -14px;">
-          <img v-if="sex==0" src="https://s3.ax1x.com/2021/02/18/yWFC1U.jpg" style="width: 14px;margin-right: -14px;">
+          <img v-if="sex===1" src="https://s3.ax1x.com/2021/02/18/yWFC1U.jpg" style="width: 14px;margin-right: -14px;">
+          <img v-if="sex===0" src="https://s3.ax1x.com/2021/02/18/yWFC1U.jpg" style="width: 14px;margin-right: -14px;">
         </span>
         <!--关注信息-->
-        <table class="user-follow" cellspacing="0" cellpadding="0" border="0">
+        <table class="user-follow" cellspacing="0" cellpadding="0" border="0" style="margin-left: 28%">
           <tr>
             <td>{{follow_num}} 关注</td>
             <td>{{fans_num}} 粉丝</td>

@@ -2,23 +2,28 @@
   <div class="studying">
     <van-nav-bar title="学习圈">
       <template #right>
-        <van-icon name="plus" size="18" />
+        <van-icon name="plus" size="18" @click="show = true"/>
       </template>
     </van-nav-bar>
     <van-cell style="background-color: #F9F9F9">
       <h3>我的圈子</h3>
-      <van-grid :gutter="10" column-num="3">
+      <van-grid :gutter="10" column-num="3" v-if="hasCircle">
         <van-grid-item v-for="value in my_circle" :key="value" :icon="value.icon" :text="value.title" :to="value.url" style="border-radius: 30px"/>
       </van-grid>
+      <van-divider v-else>你还没有订阅圈子，可以去推荐圈子逛逛</van-divider>
     </van-cell>
 
     <div style="height: 20px;background-color: #F9F9F9"></div>
     <van-cell style="background-color: #F9F9F9">
       <h3>推荐圈子</h3>
-      <van-grid :gutter="10" column-num="3">
+      <van-grid :gutter="10" column-num="3" v-if="hasSuggestCircles">
         <van-grid-item v-for="value in suggest_circle" :key="value" :icon="value.icon" :text="value.title" :to="value.url"/>
       </van-grid>
+      <van-divider v-else>没有推荐的圈子哦~</van-divider>
     </van-cell>
+
+    <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
+
     <Tabbar/>
   </div>
 </template>
@@ -51,6 +56,26 @@ export default {
         { title: 'A', icon: 'photo-o', url: '/'},
         { title: 'A', icon: 'photo-o', url: '/'},
       ],
+      hasSuggestCircles: false,
+      hasCircle:false,
+      show: false,
+      actions: [
+        { name: '加入圈子' },
+        { name: '加好友' },
+      ],
+    }
+  },
+  methods: {
+    onSelect(item) {
+      this.show = false
+      switch (item.name) {
+        case '加入圈子':
+          this.$router.push('AddCircle')
+          break
+        case '加好友':
+          this.$router.push('AddFriend')
+          break
+      }
     }
   },
   mounted() {

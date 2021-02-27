@@ -7,6 +7,9 @@ import My from "@/views/My";
 import NormalCount from "@/views/NormalCount";
 import TomatoCount from "@/views/TomatoCount";
 import Login from "@/views/Login";
+import AddCircle from "@/views/AddCircle";
+import AddFriend from "@/views/AddFriend";
+import PersonalPage from "@/views/PersonalPage";
 
 Vue.use(VueRouter)
 
@@ -45,7 +48,22 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
-  }
+  },
+  {
+    path: '/addcircle',
+    name: 'AddCircle',
+    component: AddCircle
+  },
+  {
+    path: '/addfriend',
+    name: 'AddFriend',
+    component: AddFriend
+  },
+  {
+    path: '/personalpage',
+    name: 'PersonalPage',
+    component: PersonalPage
+  },
 ]
 
 const router = new VueRouter({

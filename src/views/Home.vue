@@ -43,7 +43,7 @@
 <script>
 import Tabbar from "@/components/Tabbar";
 import axios from 'axios'
-import {Notify, Toast} from 'vant';
+import {Notify} from 'vant';
 
 export default {
   name: 'Home',

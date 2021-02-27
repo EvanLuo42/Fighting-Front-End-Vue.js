@@ -2,7 +2,7 @@
   <div class="my">
     <van-nav-bar title="我的"></van-nav-bar>
     <div style="height: 20px;background-color: #F9F9F9"/>
-    <van-cell is-link to="index">
+    <van-cell is-link to="/personalpage">
       <template #icon>
         <van-image round :src="user_avatar" width="50px" height="50px"/>
       </template>
