@@ -35,21 +35,21 @@ export default {
         }
       }).then(response => {
             response = JSON.parse(response.data);
-            if(response.data.status) {
-              this.$cookies.set('user_session', response.data.user_session, '30d')
-              this.$cookies.set('user_access', response.data.user_access, '30d')
+            if(response.data.status === 'ok') {
+              this.$cookies.set('user_session', response.data.user_session, '30min')
+              this.$cookies.set('user_access', response.data.user_access, '30min')
               if(this.savePassAndUser) {
                 this.$cookies.set('user_name', values.username)
                 this.$cookies.set('pass_word', values.password)
               }
               this.$router.go(-1)
-            } else {
+            } else if(response.data.status === 'error') {
               Toast.fail('用户名或密码不正确');
             }
           })
           .catch(error => {
             Notify({ type: 'warning', message: error.toString() });
-          });
+          })
     },
   },
 }
